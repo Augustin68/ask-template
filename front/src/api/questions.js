@@ -20,7 +20,7 @@ const questions = {
       method: "GET"
     }).then(checkStatus).then(res => res.json())
   },
-  answer: ({id, body}) => {
+  answer: ({ id, body }) => {
     return fetch(`${host}/questions/${id}/answer`, {
       method: "POST",
       headers: {

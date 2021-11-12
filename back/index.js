@@ -1,9 +1,9 @@
 require("dotenv").config()
 
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
 
-const bdd = require("./models")
+const bdd = require("./models");
 const app = express();
 
 const questionType = ["question", "action"];
@@ -26,20 +26,20 @@ app.post("/questions", (req, res) => {
 })
 
 app.get("/questions", (req, res) => {
-	bdd.Question.findAll({include: bdd.Answer}).then(questions => {
+	bdd.Question.findAll({ include: bdd.Answer }).then(questions => {
 		res.json(questions)
 	})
 })
 
 app.get("/questions/:id", (req, res) => {
-	bdd.Question.findOne({where: {id: req.params.id}, include: bdd.Answer}).then(question => {
+	bdd.Question.findOne({ where: { id: req.params.id }, include: bdd.Answer }).then(question => {
 		res.json(question)
 	})
 })
 
 app.post("/questions/:id/answer", (req, res) => {
 	if (!!req.body.answer) {
-		bdd.Question.findOne({id: req.params.id, include: bdd.Answer}).then(question => {
+		bdd.Question.findOne({ id: req.params.id, include: bdd.Answer }).then(question => {
 			if (question != null) {
 				if (question.Answer === null) {
 					bdd.Answer.create({
@@ -62,5 +62,5 @@ app.post("/questions/:id/answer", (req, res) => {
 })
 
 app.listen(process.env.PORT || 3630, () => {
-  console.log(`Serveur lancé sur le port ${process.env.PORT || 3630}`)
+	console.log(`Serveur lancé sur le port ${process.env.PORT || 3630}`)
 })

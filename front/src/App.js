@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,22 +21,22 @@ function App() {
     <Router>
       <TopBar />
 
-        <Switch>
-          <Route path="/answer/:id">
-            <Answer />
-          </Route>
+      <Switch>
+        <Route path="/answer/:id">
+          <Answer />
+        </Route>
 
-          <Route path="/ask">
-            <Question />
-          </Route>
-          
-          <Route exact path="/">
-            <ListQuestions />
-          </Route>
+        <Route path="/ask">
+          <Question />
+        </Route>
 
-          <Redirect to="/" />
-          
-        </Switch>
+        <Route exact path="/">
+          <ListQuestions />
+        </Route>
+
+        <Redirect to="/" />
+
+      </Switch>
     </Router>
   );
 }
