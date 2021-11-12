@@ -4,10 +4,7 @@ module.exports = {
         "commonjs": true,
         "es2021": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:prettier/recommended"
-    ],
+    "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 13
     },
@@ -21,10 +18,7 @@ module.exports = {
         "array-callback-return": "error",
         "array-element-newline": "off",
         "arrow-body-style": "off",
-        "arrow-parens": [
-            "error",
-            "always"
-        ],
+        "arrow-parens": "off",
         "arrow-spacing": [
             "error",
             {
@@ -41,7 +35,7 @@ module.exports = {
         "camelcase": "error",
         "capitalized-comments": "error",
         "class-methods-use-this": "error",
-        "comma-dangle": "off",
+        "comma-dangle": "error",
         "comma-spacing": [
             "error",
             {
@@ -79,7 +73,7 @@ module.exports = {
             "error",
             "consistent"
         ],
-        "function-paren-newline": "off",
+        "function-paren-newline": "error",
         "generator-star-spacing": "error",
         "grouped-accessor-pairs": "error",
         "guard-for-in": "error",
@@ -87,7 +81,7 @@ module.exports = {
         "id-length": "error",
         "id-match": "error",
         "implicit-arrow-linebreak": "error",
-        "indent": "4",
+        "indent": "off",
         "init-declarations": "error",
         "jsx-quotes": "error",
         "key-spacing": "error",
@@ -135,12 +129,6 @@ module.exports = {
         "no-eval": "error",
         "no-extend-native": "error",
         "no-extra-bind": "error",
-        "no-extra-boolean-cast": [
-            "error",
-            {
-                "enforceForLogicalOperands": false
-            }
-        ],
         "no-extra-label": "error",
         "no-extra-parens": "error",
         "no-floating-decimal": "error",
@@ -253,7 +241,7 @@ module.exports = {
         "sort-keys": "off",
         "sort-vars": "error",
         "space-before-blocks": "error",
-        "space-before-function-paren": "off",
+        "space-before-function-paren": "error",
         "space-in-parens": [
             "error",
             "never"
