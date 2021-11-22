@@ -4,7 +4,7 @@ module.exports = {
         "commonjs": true,
         "es2021": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "prettier"],
     "parserOptions": {
         "ecmaVersion": 13
     },
@@ -81,7 +81,7 @@ module.exports = {
         "id-length": "error",
         "id-match": "error",
         "implicit-arrow-linebreak": "error",
-        "indent": "off",
+        "indent": ["warn", "2"],
         "init-declarations": "error",
         "jsx-quotes": "error",
         "key-spacing": "error",

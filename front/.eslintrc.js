@@ -95,7 +95,7 @@ module.exports = {
             "error",
             "beside"
         ],
-        "indent": "off",
+        "indent": ["warn", "2"],
         "init-declarations": "off",
         "jsx-quotes": [
             "error",
