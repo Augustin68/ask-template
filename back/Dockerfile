@@ -1,25 +1,18 @@
-# Dev container
-FROM node:16-alpine as runner
-
+# Conteneur de dev
+FROM node:14 as runner
 ENV NODE_ENV=development
 
-COPY . /app
-
 WORKDIR /app
+COPY ./ /app
 
-RUN yarn install
+EXPOSE 3630
+CMD ["npm", "run", "dev"]
 
-EXPOSE 3630/tcp
-
-CMD yarn start
-
-# Prod container
-
+# Conteneur de prod
 FROM runner as builder
-
 ENV NODE_ENV=production
 
 COPY package*.json ./
+RUN npm install
 
-RUN yarn install
-CMD yarn start
+CMD ["npm", "start"]

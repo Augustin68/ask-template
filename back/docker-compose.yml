@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 
 services:
   web:
@@ -11,10 +11,12 @@ services:
       - NODE_ENV=production
       - BDD_URL=mariadb://ask:ask@database/database
       - PORT=3630
-    command: ['npm', 'run', 'dev']
+    command: [ 'npm', 'run', 'dev' ]
+    ports:
+      - 3630:3630
 
   database:
-    image: mariadb:10.7
+    image: mariadb:10.6
     ports:
       - 3631:3306
     environment:
